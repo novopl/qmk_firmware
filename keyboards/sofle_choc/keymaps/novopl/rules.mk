@@ -1,0 +1,8 @@
+# ENCODER_MAP_ENABLE = yes
+ENCODER_MAP_ENABLE = no
+CAPS_WORD_ENABLE = yes
+TRI_LAYER_ENABLE = yes
+
+# reduce size
+CONSOLE_ENABLE = no
+EXTRAFLAGS += -flto
