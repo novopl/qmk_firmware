@@ -5,4 +5,4 @@ TRI_LAYER_ENABLE = yes
 
 # reduce size
 CONSOLE_ENABLE = no
-EXTRAFLAGS += -flto
+# EXTRAFLAGS += -flto

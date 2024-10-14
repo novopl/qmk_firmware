@@ -24,7 +24,7 @@
 // I've found this helps with some ProMicros where the slave does not boot
 #define SPLIT_USB_DETECT
 
-#define TAPPING_TERM    200
+#define TAPPING_TERM        170
 #define RGB_MATRIX_SLEEP     // turn off effects when suspended
 // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
 #define SPLIT_TRANSPORT_MIRROR
