@@ -30,31 +30,60 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [L_COLEMAK_DH] = LAYOUT(
-    KC_NUBS,        KC_1,         KC_2,         KC_3,         KC_4,         KC_5,                     KC_6, KC_7,         KC_8,         KC_9,         KC_0,           DF(L_GAME),
-    KC_TAB,         KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,                     KC_J, KC_L,         KC_U,         KC_Y,         KC_SCLN,        KC_LCTL,
-    KC_ESC,         KC_A,         KC_R,         KC_S,         KC_T,         KC_G,                     KC_H, KC_N,         KC_E,         KC_I,         KC_O,           KC_QUOT,
-    KC_LSFT,        KC_Z,         KC_X,         KC_C,         KC_D,         KC_V, KC_MUTE,  KC_MPLY,  KC_K, KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,        KC_RSFT,
-                                                KC_LCTL, KC_MEH, KC_LGUI, TL_LOWR, KC_SPC,  KC_ENT,   KC_BSPC,  TL_UPPR,  KC_RALT, DF(L_GAME)
+    KC_LALT,  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                       KC_6,   KC_7,   KC_8,     KC_9,   KC_0,     DF(L_VIDEO),
+    KC_TAB,   KC_Q,   KC_W,   KC_F,   KC_P,   KC_B,                       KC_J,   KC_L,   KC_U,     KC_Y,   KC_SCLN,  KC_LCTL,
+    KC_ESC,   KC_A,   KC_R,   KC_S,   KC_T,   KC_G,                       KC_H,   KC_N,   KC_E,     KC_I,   KC_O,     KC_QUOT,
+    KC_LSFT,  KC_Z,   KC_X,   KC_C,   KC_D,   KC_V,   KC_MUTE,  KC_MPLY,  KC_K,   KC_M,   KC_COMM,  KC_DOT, KC_SLSH,  KC_LSFT,
+                  KC_LCTL, KC_LALT, KC_LGUI, TL_LOWR, KC_SPC,   MEH_T(KC_ENT),  KC_BSPC,  TL_UPPR,  KC_RALT, KC_MEH
   ),
-  // [L_COLEMAK] = LAYOUT(
-  //   KC_NUBS,  KC_1,         KC_2,         KC_3,         KC_4,         KC_5,                     KC_6, KC_7,         KC_8,         KC_9,         KC_0,           KC_BSPC,
-  //   KC_TAB,   KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,                     KC_J, KC_L,         KC_U,         KC_Y,         KC_SCLN,        KC_BSPC,
-  //   KC_ESC,   KC_A,         KC_R,         KC_S,         KC_T,         KC_G,                     KC_H, KC_N,         KC_E,         KC_I,         KC_O,           KC_QUOT,
-  //   KC_LSFT,  KC_Z,         KC_X,         KC_C,         KC_D,         KC_V, KC_MUTE,  KC_MPLY,  KC_K, KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,        KC_RSFT,
-  //                                       KC_LALT, KC_LCTL, KC_LGUI, TL_LOWR, KC_SPC,   KC_ENT,   TL_UPPR,  KC_RALT,  KC_LCTL, DF(L_GAME)
+  [L_VIDEO] = LAYOUT(
+    KC_NUBS,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,                      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    DF(L_QWERTY),
+    KC_TAB,   KC_Q,   KC_E,   KC_F,   KC_P,   KC_O,                       KC_DOWN,  KC_RIGHT, KC_U,     KC_Y,     KC_SCLN,  KC_LCTL,
+    KC_ESC,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                       KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_O,     KC_QUOT,
+    KC_LSFT,  KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MUTE,  KC_MPLY,  KC_UP,    KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_LSFT,
+                  KC_LCTL, KC_MEH, KC_LGUI, TL_LOWR,  KC_SPC,   KC_SPC,   KC_RALT,  TL_UPPR,  KC_RALT, KC_MEH
+  ),
+  [L_QWERTY] = LAYOUT(
+    KC_NUBS,  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,   KC_8,     KC_9,   KC_0,     DF(L_COLEMAK_DH),
+    KC_TAB,   KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                     KC_Y,   KC_U,   KC_I,     KC_O,   KC_P,     KC_LCTL,
+    KC_ESC,   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                     KC_H,   KC_J,   KC_K,     KC_L,   KC_NO,    KC_QUOT,
+    KC_LCTL,  KC_Z,   KC_X,   KC_C,   KC_V,   KC_B, KC_MUTE,  KC_MPLY,  KC_N,   KC_M,   KC_COMM,  KC_DOT, KC_SLSH,  KC_LSFT,
+                  KC_LALT, KC_LSFT, KC_SPC, KC_SPC, KC_B,     MEH(KC_ENT),  KC_BSPC,  TL_UPPR,  KC_RALT, KC_MEH
+  ),
+  [L_LOWER] = LAYOUT(
+    QK_RBT,   KC_6,     KC_7,       KC_8,       KC_9,     KC_0,                           KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      DF(L_COLEMAK_DH),
+    KC_NUBS,  S(KC_1),  S(KC_2),    S(KC_3),    S(KC_4),  S(KC_8),                        S(KC_6),    S(KC_9),    S(KC_0),    KC_LBRC,    KC_RBRC,    KC_LCTL,
+    KC_ESC,   KC_1,     KC_2,       KC_3,       KC_4,     KC_5,                           KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_BSLS,
+    KC_LSFT,  S(KC_5),  S(KC_7),    S(KC_EQL),  KC_EQL,   KC_SPC,   KC_MUTE,  KC_MPLY,    KC_MINS,    S(KC_MINS), S(KC_NUBS), S(KC_LBRC), S(KC_RBRC), KC_LSFT,
+                              KC_LCTL,  KC_MEH, KC_LGUI, TL_LOWR,   KC_LALT,  G(KC_SPC),  A(KC_BSPC),  TL_UPPR,    KC_LALT,  KC_MEH
+  ),
+  // [L_LOWER] = LAYOUT(
+  //   QK_RBT,   A(KC_UP), A(KC_DOWN), KC_NO,    KC_NO,    KC_NO,                          KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      DF(L_COLEMAK_DH),
+  //   KC_NUBS,  KC_6,     KC_7,       KC_8,     KC_9,     KC_0,                           S(KC_6),    S(KC_7),    S(KC_8),    S(KC_9),    S(KC_0),    KC_LCTL,
+  //   KC_ESC,   KC_1,     KC_2,       KC_3,     KC_4,     KC_5,                           KC_EQL,     KC_MINS,    KC_BSLS,    KC_LBRC,    KC_RBRC,    KC_QUOT,
+  //   KC_LSFT,  S(KC_1),  S(KC_2),    S(KC_3),  S(KC_4),  S(KC_5),  KC_MUTE,  KC_MPLY,    S(KC_EQL),  S(KC_MINS), S(KC_NUBS), S(KC_LBRC), S(KC_RBRC), KC_LSFT,
+  //                           KC_LCTL,  KC_MEH, KC_LGUI, TL_LOWR,  KC_LALT,   G(KC_SPC),  A(KC_BSPC),  TL_UPPR,    KC_LALT,  KC_MEH
   // ),
-  [L_GAME] = LAYOUT(
-    KC_NUBS,        KC_1,         KC_2,         KC_3,         KC_4,         KC_5,                     KC_6,     KC_7,     KC_8,         KC_9,         KC_0,           DF(L_COLEMAK_DH),
-    KC_TAB,         KC_Q,         KC_E,         KC_F,         KC_P,         KC_O,                     KC_DOWN,  KC_RIGHT, KC_U,         KC_Y,         KC_SCLN,        KC_LCTL,
-    KC_ESC,         KC_A,         KC_R,         KC_S,         KC_T,         KC_I,                     KC_LEFT,  KC_N,     KC_E,         KC_I,         KC_O,           KC_QUOT,
-    KC_LSFT,        KC_Z,         KC_X,         KC_C,         KC_D,         KC_V, KC_MUTE,  KC_MPLY,  KC_UP,    KC_M,     KC_COMM,      KC_DOT,       KC_SLSH,        KC_RSFT,
-                                              KC_LALT, KC_LCTL, KC_LGUI, TL_LOWR, KC_SPC,   KC_SPC,   TL_UPPR,  KC_RALT,  KC_LCTL, DF(L_COLEMAK_DH)
+  [L_UPPER] = LAYOUT(
+    KC_NO,      KC_NO,  KC_NO,  KC_NO,      KC_NO,        KC_NO,                        KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,      KC_NO,
+    // S(KC_NUBS), KC_F11, KC_F12, C(KC_LEFT), C(KC_RIGHT),  KC_NO,                        KC_DOWN,  KC_RIGHT,   C(KC_6),    KC_VOLD,  KC_VOLU,    G(C(KC_Q)),
+    S(KC_NUBS), KC_F11, KC_F12, KC_F13,     KC_F14,       KC_F15,                       KC_DOWN,  KC_RIGHT,   C(KC_6),    KC_VOLD,  KC_VOLU,    G(C(KC_Q)),
+    KC_ESC,     KC_F6,  KC_F7,  KC_F8,      KC_F9,        KC_F10,                       KC_LEFT,  KC_NO,      KC_NO,      KC_RIGHT, KC_NO,      KC_NO,
+    KC_LSFT,    KC_F1,  KC_F2,  KC_F3,      KC_F4,        KC_F5,  KC_MUTE,    KC_MPLY,  KC_UP,    KC_HOME,    KC_END,     KC_BRID,  KC_BRIU,    KC_LSFT,
+                            KC_LCTL,  KC_MEH,   KC_LALT, TL_LOWR, A(KC_BSPC), KC_SPC, KC_NO,  TL_UPPR,  KC_LALT,  KC_MEH
+  ),
+  [L_ADJUST] = LAYOUT(
+    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+    KC_NO,    KC_NO,    KC_BTN2,  KC_MS_U,  KC_BTN1,  KC_NO,                  KC_NO,    KC_PGDN,  KC_PGUP,  KC_BTN1,  KC_ACL2,  KC_ACL2,
+    KC_ACL1,  KC_NO,    KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_NO,                  KC_NO,    KC_WH_D,  KC_WH_U,  KC_NO,    KC_ACL1,  KC_ACL1,
+    KC_NO,    KC_NO,    KC_NO,    KC_WH_D,  KC_WH_U,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+                            KC_NO,  KC_NO,  KC_NO,  TL_LOWR,  KC_NO,  KC_NO,  KC_NO,  TL_UPPR,  KC_NO,    KC_NO
   ),
   // [L_GAME] = LAYOUT(
   //   KC_NUBS,  KC_1,   KC_2,       KC_3,     KC_4,       KC_5,                       KC_6,     KC_7,     KC_8,   KC_9,   KC_0,   KC_BSPC,
   //   KC_TAB,   KC_NO,  KC_NO,      KC_UP,    KC_NO,      KC_NO,                      KC_DOWN,  KC_RIGHT, KC_NO,  KC_NO,  KC_NO,  KC_BSPC,
   //   KC_ESC,   KC_NO,  KC_LEFT,    KC_DOWN,  KC_RIGHT,   KC_NO,                      KC_LEFT,  KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_QUOT,
-  //   KC_LSFT,  KC_NO,  KC_NO,      KC_NO,    KC_NO,      KC_NO, KC_MUTE,  KC_MPLY,   KC_UP,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_RSFT,
+  //   KC_LSFT,  KC_NO,  KC_NO,      KC_NO,    KC_NO,      KC_NO, KC_MUTE,  KC_MPLY,   KC_UP,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_LSFT,
   //                           KC_LALT, KC_LCTL, KC_LGUI, TL_LOWR, KC_SPC,   KC_ENT,   TL_UPPR,  KC_RALT,  KC_LCTL, DF(L_COLEMAK_DH)
   // ),
   // QWERTY
@@ -62,43 +91,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //   KC_NUBS,  KC_1,         KC_2,         KC_3,         KC_4,         KC_5,                     KC_6, KC_7,         KC_8,         KC_9,         KC_0,     KC_BSPC,
   //   KC_TAB,   KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,                     KC_Y, KC_U,         KC_I,         KC_O,         KC_P,     KC_BSPC,
   //   KC_ESC,   KC_A,         KC_S,         KC_D,         KC_F,         KC_G,                     KC_H, KC_J,         KC_K,         KC_L,         KC_NO,    KC_QUOT,
-  //   KC_LSFT,  KC_Z,         KC_X,         KC_C,         KC_V,         KC_B, KC_MUTE,  KC_MPLY,  KC_N, KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,  KC_RSFT,
+  //   KC_LSFT,  KC_Z,         KC_X,         KC_C,         KC_V,         KC_B, KC_MUTE,  KC_MPLY,  KC_N, KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,  KC_LSFT,
   //                                       KC_LCTL, KC_LCTL, KC_LGUI, TL_LOWR, KC_SPC,   KC_ENT,   TL_UPPR,  KC_RALT,  KC_LCTL, DF(L_COLEMAK_DH)
   // ),
-  [L_LOWER] = LAYOUT(
-    QK_RBT,           KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     DF(L_COLEMAK_DH),
-    KC_NUBS,          S(KC_1),    S(KC_2),    S(KC_3),    S(KC_4),    S(KC_5),                    S(KC_6),    S(KC_7),    S(KC_8),    S(KC_9),    S(KC_0),    KC_LCTL,
-    KC_ESC,           KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                       KC_EQL,     KC_MINS,    S(KC_5),    KC_LBRC,    KC_RBRC,    KC_BSLS,
-    KC_LSFT,          KC_6,       KC_7,       KC_8,       KC_9,       KC_0,   KC_MUTE,  KC_MPLY,  S(KC_EQL),  S(KC_MINS), S(KC_NUBS), S(KC_LBRC), S(KC_RBRC),  KC_RSFT,
-                                        KC_LCTL,  G(C(KC_Q)), KC_NO, TL_LOWR, KC_ENT,   G(KC_SPC),  A(KC_BSPC),  TL_UPPR,    KC_LCTL,  KC_RCTL
-  ),
-  [L_UPPER] = LAYOUT(
-    KC_NO,            KC_F12, KC_F13,   KC_F14,     KC_F15,       KC_F16,                         KC_F17,       KC_F18,     KC_F19,     KC_F20,     KC_F21,     KC_F22,
-    S(KC_NUBS),       KC_F11, KC_F12,   C(KC_LEFT), C(KC_RIGHT),  KC_NO,                          KC_DOWN,      KC_RIGHT,   KC_VOLU,    KC_BRIU,    S(KC_SCLN), KC_NO,
-    KC_ESC,           KC_F1,  KC_F2,    KC_F3,      KC_F4,        KC_F5,                          KC_LEFT,      KC_NO,      KC_VOLD,    KC_BRID,    KC_NO,      KC_NO,
-    KC_LSFT,          KC_F6,  KC_F7,    KC_F8,      KC_F9,        KC_F10,   KC_MUTE,  KC_MPLY,    KC_UP,        KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_NO,      KC_RSFT,
-                                    KC_LALT,  KC_HYPR,  KC_MEH, TL_LOWR, A(KC_BSPC),  KC_SPC,  KC_NO,    TL_UPPR,    KC_SPC,      KC_RCTL
-  ),
-  [L_ADJUST] = LAYOUT(
-    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,
-    KC_NO,    KC_NO,    KC_ACL2,  KC_ACL1,  KC_ACL2,  KC_NO,                  KC_NO,    KC_BTN1,  KC_MS_U,  KC_BTN2,  KC_NO,  KC_ACL2,
-    KC_ACL1,  KC_NO,    KC_ACL1,  KC_PGDN,  KC_PGUP,  KC_NO,                  KC_NO,    KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_NO,  KC_ACL1,
-    KC_NO,    KC_NO,    KC_ACL2,  KC_WH_D,  KC_WH_U,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,
-                            KC_NO,  KC_NO,  KC_NO,  TL_LOWR,  KC_NO,  KC_NO,  KC_NO,  TL_UPPR,  KC_NO,    KC_NO
-  ),
+  // [L_COLEMAK] = LAYOUT(
+  //   KC_NUBS,  KC_1,         KC_2,         KC_3,         KC_4,         KC_5,                     KC_6, KC_7,         KC_8,         KC_9,         KC_0,           KC_BSPC,
+  //   KC_TAB,   KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,                     KC_J, KC_L,         KC_U,         KC_Y,         KC_SCLN,        KC_BSPC,
+  //   KC_ESC,   KC_A,         KC_R,         KC_S,         KC_T,         KC_G,                     KC_H, KC_N,         KC_E,         KC_I,         KC_O,           KC_QUOT,
+  //   KC_LSFT,  KC_Z,         KC_X,         KC_C,         KC_D,         KC_V, KC_MUTE,  KC_MPLY,  KC_K, KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,        KC_LSFT,
+  //                                       KC_LALT, KC_LCTL, KC_LGUI, TL_LOWR, KC_SPC,   KC_ENT,   TL_UPPR,  KC_RALT,  KC_LCTL, DF(L_GAME)
+  // ),
+  // -- Digits like keypad
+  // [L_LOWER] = LAYOUT(
+  //   QK_RBT,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                        KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      DF(L_COLEMAK_DH),
+  //   KC_NUBS,  S(KC_1),  KC_7,     KC_8,     KC_9,     S(KC_3),                      S(KC_6),    S(KC_7),    S(KC_8),    S(KC_9),    S(KC_0),    KC_LCTL,
+  //   KC_ESC,   KC_0,     KC_4,     KC_5,     KC_6,     S(KC_4),                      KC_EQL,     KC_MINS,    S(KC_5),    KC_LBRC,    KC_RBRC,    KC_BSLS,
+  //   KC_LSFT,  S(KC_2),  KC_1,     KC_2,     KC_3,     S(KC_5),  KC_MUTE,  KC_MPLY,  S(KC_EQL),  S(KC_MINS), S(KC_NUBS), S(KC_LBRC), S(KC_RBRC),  KC_LSFT,
+  //                         KC_LCTL,  G(C(KC_Q)), KC_NO, TL_LOWR, KC_ENT,   G(KC_SPC),  A(KC_BSPC),  TL_UPPR,    KC_LCTL,  KC_RCTL
+  // ),
+  // [L_UPPER] = LAYOUT(
+  //   KC_NO,      KC_NO,      KC_NO,  KC_NO,  KC_NO,  KC_NO,                              KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,      KC_NO,
+  //   S(KC_NUBS), KC_NO,      KC_F7,  KC_F8,  KC_F9,  KC_F11,                             KC_DOWN,  KC_RIGHT, KC_NO,    KC_VOLU,  KC_BRIU,    KC_NO,
+  //   KC_ESC,     KC_F10,     KC_F4,  KC_F5,  KC_F6,  KC_F12,                             KC_LEFT,  C(KC_N),  C(KC_E),  KC_VOLD,  KC_BRID,    KC_NO,
+  //   KC_LSFT,    C(KC_LEFT), KC_F1,  KC_F2,  KC_F3,  C(KC_RIGHT),    KC_MUTE,  KC_MPLY,  KC_UP,    KC_HOME,  KC_END,   KC_NO,    S(KC_SCLN), KC_LSFT,
+  //                           KC_LALT,  KC_HYPR,  KC_MEH, TL_LOWR, A(KC_BSPC),  KC_SPC,  KC_NO,    TL_UPPR,    KC_SPC,      KC_RCTL
+  // ),
 
   // [L_LOWER] = LAYOUT(
   //   QK_RBT,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,                            KC_F6,        KC_F7,      KC_F8,    KC_F9,    KC_F10,     KC_F11,
   //   QK_RBT,     S(KC_1),    S(KC_2),    S(KC_3),    S(KC_4),    S(KC_5),                          S(KC_6),      S(KC_7),    S(KC_8),  S(KC_9),  S(KC_0),    KC_BSPC,
   //   S(KC_NUBS), KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                             KC_6,         KC_7,       KC_8,     KC_9,     KC_0,       KC_BSLS,
-  //   KC_LSFT,    S(KC_DOT),  KC_MINS,    KC_LBRC,    KC_RBRC,    C(KC_LEFT) ,  KC_MUTE,  KC_MPLY,  C(KC_RIGHT),  KC_MINS,    KC_EQL,   KC_DOT,   KC_SLSH,    KC_RSFT,
+  //   KC_LSFT,    S(KC_DOT),  KC_MINS,    KC_LBRC,    KC_RBRC,    C(KC_LEFT) ,  KC_MUTE,  KC_MPLY,  C(KC_RIGHT),  KC_MINS,    KC_EQL,   KC_DOT,   KC_SLSH,    KC_LSFT,
   //                                   G(C(KC_Q)),  KC_UP,  QK_RBT, KC_NO,   KC_ENT,   G(KC_SPC),  TL_UPPR,  KC_RALT,    KC_LCTL,  KC_RCTL
   // ),
   // [L_UPPER] = LAYOUT(
   //   KC_NO,      KC_F12,   KC_F13,     KC_F14,     KC_F15,   KC_F16,                         KC_F17,       KC_F18,     KC_F19,       KC_F20,     KC_F21,     KC_F22,
   //   KC_NO,      S(KC_1),  S(KC_2),    S(KC_3),    S(KC_4),  S(KC_5),                          S(KC_6),      S(KC_7),    S(KC_8),  S(KC_9),  S(KC_0),    KC_BSPC,
   //   KC_NUBS,    KC_1,     KC_2,       KC_3,       KC_4,     KC_5,                           KC_6,         KC_7,       KC_8,         KC_9,       KC_0,       KC_BSLS,
-  //   KC_LSFT,    S(KC_DOT),  KC_MINS,  KC_LBRC,    KC_RBRC,  C(KC_LEFT),  KC_MUTE,  KC_MPLY, C(KC_RIGHT),  KC_MINS,    KC_EQL,       KC_DOT,     KC_SLSH,    KC_RSFT,
+  //   KC_LSFT,    S(KC_DOT),  KC_MINS,  KC_LBRC,    KC_RBRC,  C(KC_LEFT),  KC_MUTE,  KC_MPLY, C(KC_RIGHT),  KC_MINS,    KC_EQL,       KC_DOT,     KC_SLSH,    KC_LSFT,
   //                                 KC_LALT,  KC_LCTL,  KC_LCMD, TL_LOWR, A(KC_BSPC),  KC_SPC,  TT(L_UPPER),    KC_RALT,    KC_LCTL,      KC_RCTL
   // ),
 
@@ -117,19 +147,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool rgb_matrix_indicators_user(void) {
   switch (get_highest_layer(layer_state)) {
     case L_LOWER:
-      rgb_matrix_set_color_all(0x00, 0xff, 0x00);
+      // rgb_matrix_set_color_all(0x00, 0xff, 0x00);
+      rgb_matrix_set_color_all(0x00, 0x60, 0x00);
       break;
     case L_UPPER:
-      rgb_matrix_set_color_all(0x00, 0x00, 0xff);
+      // rgb_matrix_set_color_all(0x00, 0x00, 0xff);
+      rgb_matrix_set_color_all(0x00, 0x00, 0x60);
       break;
     case L_ADJUST:
       rgb_matrix_set_color_all(0x80, 0x00, 0x80);
       break;
     default:
       switch (biton32(default_layer_state)) {
-        case L_QWERTY:
-          rgb_matrix_set_color_all(0x44, 0x20, 0x00);
-          break;
         case L_COLEMAK_DH:
           // rgb_matrix_set_color_all(0x00, 0x40, 0x00);
           rgb_matrix_set_color_all(0x00, 0x05, 0x00);
@@ -138,9 +167,12 @@ bool rgb_matrix_indicators_user(void) {
         case L_COLEMAK:
           rgb_matrix_set_color_all(0x20, 0x20, 0x00);
           break;
-        case L_GAME:
+        case L_VIDEO:
           rgb_matrix_set_color_all(0x00, 0x40, 0x40);
           // rgb_matrix_set_color_all(0x44, 0x20, 0x00);
+          break;
+        case L_QWERTY:
+          rgb_matrix_set_color_all(0x44, 0x20, 0x00);
           break;
       }
   }

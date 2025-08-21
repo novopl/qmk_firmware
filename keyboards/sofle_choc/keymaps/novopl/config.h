@@ -25,6 +25,8 @@
 #define SPLIT_USB_DETECT
 
 #define TAPPING_TERM        170
+#define PERMISSIVE_HOLD
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 #define RGB_MATRIX_SLEEP     // turn off effects when suspended
 // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
 #define SPLIT_TRANSPORT_MIRROR
@@ -34,8 +36,8 @@
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 #define L_COLEMAK_DH        0
 #define L_COLEMAK           1
-#define L_QWERTY            2
-#define L_GAME              3
+#define L_VIDEO             2
+#define L_QWERTY            3
 #define L_LOWER             4
 #define L_UPPER             5
 #define L_ADJUST            6
@@ -48,7 +50,7 @@
 
 // Mouse
 // #define MK_KINETIC_SPEED
-#define MOUSEKEY_INTERVAL       16
+#define MOUSEKEY_INTERVAL       20
 #define MOUSEKEY_TIME_TO_MAX    50
 
 // Reduce size
